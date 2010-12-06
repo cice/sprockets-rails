@@ -1,8 +1,15 @@
 class SprocketsController < ActionController::Base
-  caches_page :show, :if => Proc.new { Rails.configuration.action_controller.perform_caching }
+  respond_to :js
+  caches_page :show, :if => proc(&:perform_caching?)
   
   def show
-    sprocket = Sprocket.new(params[:id])
-    render :text => sprocket.source, :content_type => "text/javascript"
+    sprocket_set = SprocketSet.new params[:id]
+    
+    respond_with sprocket_set
+  end
+  
+  protected
+  def perform_caching?
+    Rails.configuration.action_controller.perform_caching
   end
 end

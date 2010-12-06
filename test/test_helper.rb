@@ -1,6 +1,10 @@
-require 'test/unit'
-require 'config/environment'
-require 'active_support'
-require 'active_support/test_case'
+lib_dir = File.join File.dirname(__FILE__), '..', 'lib'
+$:.unshift lib_dir
 
-require File.dirname(__FILE__) + '/../init.rb'
+require 'rubygems'
+require 'test/unit'
+require 'active_support'
+require 'mocha'
+
+class ActiveSupport::TestCase
+end
