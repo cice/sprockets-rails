@@ -10,7 +10,7 @@ module SprocketsRails
       load_configuration
       
       Rails.application.paths.app.sprockets SprocketsRails.configuration.javascripts_path, :glob => "**/*.js"
-      Rails.application.paths.app.sprockets_lib SprocketsRails.configuration.javascripts_path, :glob => "**/*.js"      
+      Rails.application.paths.app.sprockets_lib SprocketsRails.configuration.javascripts_path, :glob => "lib/**/*.js"      
       
       config.to_prepare do
         ApplicationController.send :helper, :sprockets
