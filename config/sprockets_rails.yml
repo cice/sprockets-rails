@@ -6,4 +6,5 @@
 #   - vendor/plugins/*/app/javascripts
 
 javascripts_path: app/javascripts
+javascripts_lib_path: app/javascripts/lib
 javascripts_route: javascripts

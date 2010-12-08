@@ -16,6 +16,10 @@ module SprocketsRails
       self[:javascripts_path] || 'app/javascripts'
     end
     
+    def javascripts_lib_path
+      self[:javascripts_lib_path] || 'app/javascripts/lib'
+    end
+    
     def javascripts_route
       self[:javascripts_route] || 'javascripts'
     end

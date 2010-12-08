@@ -57,8 +57,12 @@ class SprocketSet
   
   def secretary
     @secretary ||= Sprockets::Secretary.new :root => Rails.root,
-                                            :load_path => SprocketsRails.configuration.load_paths,
+                                            :load_path => load_paths,
                                             :source_files => files
+  end
+  
+  def load_paths
+    SprocketsRails.configuration.load_paths + Rails.application.paths.app.sprockets_lib.to_a
   end
   
   def find_sprocket filename
