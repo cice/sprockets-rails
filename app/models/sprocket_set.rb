@@ -47,7 +47,7 @@ class SprocketSet
   end
   
   def to_js options = nil
-    Rails.env.development? ? concatenation.to_s : minification.to_s
+    concatenation.to_s
   end
   
   protected
